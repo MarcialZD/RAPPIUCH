@@ -1,3 +1,4 @@
+     
 /*
     SI YO INGRESARÁ DIRECTAMENTE
     A DASHBOARD.HTML 
@@ -9,7 +10,7 @@
 */
 
 const compras = [
-    {   
+    {
         "id": "12",
         "uuid": "15414581asda1a1x",
         "nombre": "Compra en Real Plaza",
@@ -79,7 +80,7 @@ const compras = [
                 "SKU": "666",
                 "nombre": "Vela negra",
                 "monto": "S/ 200",
-                "imagen":"images/vela.PNG"
+                "imagen": "images/vela.PNG"
             }
         ]
     }
@@ -88,7 +89,7 @@ const compras = [
 const $misProductos = $("#misProductos");
 compras.forEach((compra) => {
     //2. Crear una NUEVA URL donde usemos de parametro el ID
-    const link = "producto.html?idcompra="+compra.id;
+    const link = "producto.html?idcompra=" + compra.id;
     const template = `
         <li class="collection-item avatar" data-id="${compra.id}" data-uuid="${compra.uuid}">
             <i class="material-icons circle red">play_arrow</i>
@@ -122,12 +123,12 @@ if (idcompra) {
         if (compra.id == idcompra) {
             const mytitle = "Historial de productos de " + compra.nombre;
             $("#myTitle").html(mytitle);
-            misproductos = compra.productos;           
+            misproductos = compra.productos;
         }
     });
     if (misproductos.length > 0) {
-        misproductos.forEach((producto)=> {
-    var imagenHTML = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '" class="imagen-producto">';
+        misproductos.forEach((producto) => {
+            let imagenHTML = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '" class="imagen-producto">';
 
             const template = `
                 <li class="collection-item">
@@ -141,4 +142,33 @@ ${imagenHTML}
             $("#myProducts").append(template);
         });
     }
+}
+
+// Tarea 
+//se añadió 
+// verificar si el usuario esta logueado para ingresar a dashboard.html y producto.html
+function verificarAutenticacion() {
+    if (!localStorage.getItem("usuarioLogueado")) {
+        location.href = "index.html";
+    }
+}
+verificarAutenticacion();
+// se añadió un cerrar sesión en ancho pc
+document.getElementById('cerrarSesion').addEventListener('click', function () {
+    localStorage.removeItem("usuarioLogueado");
+    location.href = "index.html";
+});
+// se añadió un cerrar sesión en ancho movil
+document.getElementById('cerrarSesionToggle').addEventListener('click', function () {
+    localStorage.removeItem("usuarioLogueado");
+    location.href = "index.html";
+});
+// verificar si el usuario presionó el boton ver producto para estar en producto.html
+function verificarBotonCompra() {
+    if (!idcompra) {
+        location.href = "dashboard.html";
+    }
+}
+if (window.location.pathname.includes("producto.html")) {
+    verificarBotonCompra();
 }

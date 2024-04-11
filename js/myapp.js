@@ -12,6 +12,7 @@ $("#login").on("click", function(){
     const valuePassword = $password.val();
     if (valueUsuario == credenciales.usuario) {
         if (valuePassword == credenciales.pass) {
+            localStorage.setItem("usuarioLogueado", true);
             location.href = "dashboard.html";
         } else {
             Swal.fire({
@@ -29,4 +30,3 @@ $("#login").on("click", function(){
     }
 });
 
-//imprimir esa lista de compras
