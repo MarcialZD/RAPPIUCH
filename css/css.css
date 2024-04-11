@@ -1,0 +1,10 @@
+.btnWitdh {
+    width: 100%;
+}
+body{
+    overflow: hidden; 
+    background-image: url("https://cdn.www.gob.pe/uploads/document/file/898524/Lima-noche-noticias20200630-20479-p34ap7.gif"); /* Cambia "tu_url_de_imagen.jpg" por la URL de tu imagen */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
