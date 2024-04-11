@@ -1,22 +1,28 @@
 .btnWitdh {
     width: 100%;
 }
-body{
-    overflow: hidden; 
-    background-image: url("https://cdn.www.gob.pe/uploads/document/file/898524/Lima-noche-noticias20200630-20479-p34ap7.gif"); /* Cambia "tu_url_de_imagen.jpg" por la URL de tu imagen */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    
-}
-.saludo{
-    background-color: aliceblue;
-    width: 15%;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 20%;
-    text-align: center;
-    height: 30px;
 
+
+
+.btnWitdh {
+    width: 100%;
+}
+.btnIcon i {
+    margin-right: 10px;
+}
+.btnIcon {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.collection .collection-item.avatar .title {
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+}
+.collection .collection-item.avatar p.precio {
+    color: #2bbbad;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
 }

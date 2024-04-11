@@ -3,8 +3,8 @@ const $password = $("#password");
 
 /* CREDENCIALES VERDADERAS */
 const credenciales = {
-    usuario: "UCH2024",
-    pass: "123456"
+    usuario: "user",
+    pass: "gaa"
 };
 
 $("#login").on("click", function(){
@@ -28,3 +28,5 @@ $("#login").on("click", function(){
         });
     }
 });
+
+//imprimir esa lista de compras
